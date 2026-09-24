@@ -1,3 +1,36 @@
+# 15 – Configuring RIPv2 (Classless) Routing in Packet Tracer
+
+This tutorial is the fifteenth in our Cisco Packet Tracer series and focuses on **RIPv2 (Routing Information Protocol version 2)**. [Tutorial 10](../tutorial-series/tutorial10.md) configured **RIPv1**, which is a **classful** protocol — it does not send subnet mask information in its updates. RIPv2 is **classless**: it carries the subnet mask with every advertised route, which means it supports **VLSM (Variable-Length Subnet Masking)** and discontiguous networks.
+
+To make that difference concrete rather than just theoretical, we'll reuse the familiar three-router topology from Tutorials 9–12, but this time we'll carve all of the addressing out of a **single Class C network using VLSM** instead of three separate `/24`s. This is exactly the kind of addressing scheme that breaks under RIPv1 and works cleanly under RIPv2.
+
+```{admonition} RIPv1 vs RIPv2 — Quick Comparison
+:class: note
+| | RIPv1 | RIPv2 |
+|---|---|---|
+| Classful / Classless | Classful | Classless |
+| Subnet mask in updates | No | Yes |
+| Supports VLSM | No | Yes |
+| Update delivery | Broadcast (255.255.255.255) | Multicast (224.0.0.9) |
+| Authentication | Not supported | Supported (plain text / MD5) |
+| Auto-summarization | Always on | Configurable (`no auto-summary`) |
+```
+
+If you're after a different routing protocol, check out -
+
+- [Tutorial 9: Configuring Static Routing in Packet Tracer](../tutorial-series/tutorial9.md)
+- [Tutorial 10: Configuring RIP Routing in Packet Tracer](../tutorial-series/tutorial10.md)
+- [Tutorial 11: Configuring OSPF Routing in Packet Tracer](../tutorial-series/tutorial11.md)
+- [Tutorial 12: Configuring EIGRP Routing in Packet Tracer](../tutorial-series/tutorial12.md)
+- [Tutorial 15: Configuring RIPv2 (Classless) Routing in Packet Tracer](../tutorial-series/tutorial15.md)
+- [Tutorial 16: Configuring BGP Routing in Packet Tracer](../tutorial-series/tutorial16.md)
+
+Find the CISCO pkt files in the repo -
+
+[![Repo](https://img.shields.io/badge/GitHub-CISCO--Packet--Tracer--Files-purple?logo=github)](https://github.com/anirudhagaikwad/ComputerNetworks/tree/main/Practicals_Cisco/cisco)
+
+---
+
 ## Part 1 – Network Topology Overview
 
 This network includes:
