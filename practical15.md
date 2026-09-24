@@ -41,7 +41,7 @@ This network includes:
 
 Unlike Tutorial 10, all addressing here comes from **one classful network, `192.168.20.0/24`**, subnetted with VLSM so the LANs and the WAN links use *different* mask lengths.
 
-![Figure](screenshots\15-1.jpeg)
+![Figure](screenshots/15-1.jpeg)
 
 ---
 
@@ -103,7 +103,7 @@ Follow these steps for **R0**, **R1**, and **R2**:
 | R0   | R1 | se0/0 ↔ se1/0   |
 | R1   | R2 | se0/0 ↔ se1/0   |
 
-![Figure](screenshots\15-2.jpeg)
+![Figure](screenshots/15-2.jpeg)
 
 ---
 
@@ -139,7 +139,7 @@ Go to **Desktop > IP Configuration** on each PC:
 | PC4 | 192.168.20.140 | 255.255.255.192  | 192.168.20.129    |
 | PC5 | 192.168.20.141 | 255.255.255.192  | 192.168.20.129    |
 
-![Figure](screenshots\15-3.jpeg)
+![Figure](screenshots/15-3.jpeg)
 
 ```{admonition} Important
 :class: important
@@ -193,7 +193,7 @@ exit
 write memory
 exit
 ```
-(screenshots\15-4a.jpeg)
+(screenshots/15-4a.jpeg)
 
 ### Step 4.2 – R1 Configuration
 
@@ -227,7 +227,7 @@ exit
 write memory
 exit
 ```
-(screenshots\15-4b.jpeg)
+(screenshots/15-4b.jpeg)
 
 ### Step 4.3 – R2 Configuration
 
@@ -256,7 +256,7 @@ write memory
 exit
 ```
 
-![Figure](screenshots\15-4c.jpeg)
+![Figure](screenshots/15-4c.jpeg)
 
 
 ---
@@ -271,8 +271,8 @@ show ip protocols
 
 Check that the output reads `Sending updates` / `Routing for Networks` with **"Sending version 2, Receiving version 2"** — if it still says version 1, double check the `version 2` line was entered inside `router rip` mode on every router.
 
-![Figure](screenshots\15-5.1a.jpeg)
-(screenshots\15-5.1b.jpeg)
+![Figure](screenshots/15-5.1a.jpeg)
+(screenshots/15-5.1b.jpeg)
 
 ### Step 5.2 – Check Routing Tables
 
@@ -286,8 +286,8 @@ You should see RIP routes (`R`) to all remote networks, each showing its **corre
 show ip route rip
 ```
 
-![Figure](screenshots\15-5.2a.jpeg)
-(screenshots\15-5.2b.jpeg)
+![Figure](screenshots/15-5.2a.jpeg)
+(screenshots/15-5.2b.jpeg)
 
 ### Step 5.3 – Test Connectivity
 
@@ -304,7 +304,7 @@ From **PC3**, ping **PC4**:
 ping 192.168.20.140
 ```
 
-![Figure](screenshots\15-5.3.jpeg)
+![Figure](screenshots/15-5.3.jpeg)
 
 Repeat pings between any devices across networks.
 

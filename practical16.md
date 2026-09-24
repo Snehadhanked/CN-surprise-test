@@ -39,7 +39,7 @@ This network includes:
 
 The goal is for PCs in AS 100 to reach PCs in AS 200 (and vice-versa) purely through BGP-advertised routes.
 
-![Figure](screenshots\16-1.png)
+![Figure](screenshots/16-1.png)
 
 ---
 
@@ -92,7 +92,7 @@ Follow these steps for **R0** and **R1**:
 |------|----|-----------------|
 | R0   | R1 | se0/0 ↔ se1/0   |
 
-![Figure](screenshots\16-2.png)
+![Figure](screenshots/16-2.png)
 
 ---
 
@@ -115,7 +115,7 @@ Go to **Desktop > IP Configuration** on each PC:
 | PC2 | 172.16.2.10  | 255.255.255.0   | 172.16.2.1        |
 | PC3 | 172.16.2.11  | 255.255.255.0   | 172.16.2.1        |
 
-![Figure](screenshots\16-3.png)
+![Figure](screenshots/16-3.png)
 
 ```{admonition} Important
 :class: important
@@ -163,7 +163,7 @@ exit
 write memory
 exit
 ```
-![Figure](screenshots\16-4a.png)
+![Figure](screenshots/16-4a.png)
 
 ### Step 4.2 – R1 Configuration (AS 200)
 
@@ -191,7 +191,7 @@ write memory
 exit
 ```
 
-![Figure](screenshots\16-4b.png)
+![Figure](screenshots/16-4b.png)
 
 ---
 
@@ -205,7 +205,7 @@ show ip bgp summary
 
 Look at the neighbor's `State/PfxRcd` column — a numeric value (e.g. `1`) means the peering is **Established** and a prefix has been received. If it instead shows `Idle` or `Active`, the peering hasn't come up yet — double check the serial link's IPs, the AS numbers, and that both interfaces show `no shutdown`.
 
-![Figure](screenshots\16-5a.png)
+![Figure](screenshots/16-5a.png)
 
 ### Step 5.2 – Inspect the BGP Table
 
@@ -215,7 +215,7 @@ show ip bgp
 
 You should see both `172.16.1.0/24` and `172.16.2.0/24` listed, each with its next-hop and AS path.
 
-![Figure](screenshots\16-5b.png)
+![Figure](screenshots/16-5b.png)
 
 ### Step 5.3 – Check Routing Tables
 
@@ -225,7 +225,7 @@ show ip route bgp
 
 You should see the remote LAN as a BGP route (`B`), learned entirely through the eBGP peering rather than a static entry or an IGP.
 
-![Figure](screenshots\16-5c.png)
+![Figure](screenshots/16-5c.png)
 
 ### Step 5.4 – Test Connectivity
 
@@ -234,7 +234,7 @@ From **PC0**, run:
 ```bash
 ping 172.16.2.10
 ```
-![Figure](screenshots\16-5d1.png)
+![Figure](screenshots/16-5d1.png)
 
 From **PC2**, run:
 
@@ -242,7 +242,7 @@ From **PC2**, run:
 ping 172.16.1.10
 ```
 
-![Figure](screenshots\16-5d2.png)
+![Figure](screenshots/16-5d2.png)
 
 ---
 
