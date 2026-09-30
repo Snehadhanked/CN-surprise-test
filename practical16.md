@@ -4,7 +4,7 @@ This tutorial is the sixteenth in our Cisco Packet Tracer series and focuses on 
 
 Because BGP only makes sense between two different autonomous systems, this tutorial uses a smaller, two-AS topology rather than extending the three-router network from Tutorials 9–12, 15.
 
-```{admonition} eBGP vs iBGP
+```{admonition} eBGP vs iBGP..
 :class: note
 BGP peerings come in two flavours:
 - **eBGP (External BGP)** — between routers in *different* AS numbers, typically directly connected. This is what we configure below.
